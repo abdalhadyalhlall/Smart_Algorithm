@@ -391,7 +391,7 @@ return valid;
             }
             else {
                 System.out.println("AI turn Black");
-                int bestMoveRow = c.getBestMove(this, value);
+                int bestMoveRow = c.bestmove(this, value);
 
                 if (bestMoveRow != -1) {
                     Stone black = null;
