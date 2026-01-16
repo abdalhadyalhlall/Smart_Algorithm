@@ -17,7 +17,7 @@ public class Main {
 
     }
      switch (answer){
-         case "yes" : board.PlayGameWithAI();
+         case "yes" : board.PlayGameWithAlgorithm();
          case "no"  : board.PlayGame();
      }
     }

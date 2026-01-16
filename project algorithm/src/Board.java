@@ -231,7 +231,7 @@ public class Board {
 }
 
 
-
+// يقوم بتحريك حجر معين وفق الشرطيين وهما أمكانية الحركة والحركة التالية ونعياد الأحجار التي من نفس اللون التي تقع في المواقع الثلاث الاخيرة
     public boolean Move(Stone stone,int value){
         if(!CanMove(stone,stone.row+value )){
             return false ;
@@ -255,7 +255,7 @@ public class Board {
 return valid;
     }
 
-
+//تابع الفوز ويتحقق أذا كان عدد الاحجار الخارجة من الرقعة للون واحد تساوي سبعة وإلا تستمر باللعب
     public char IsWin(){
 
 
@@ -267,7 +267,7 @@ return valid;
     }
    return 'c';
 }
-
+//تابع اللعب بين لاعبين اثنين بالتناوب
     public void PlayGame() {
         Scanner scan = new Scanner(System.in);
         int player = 0;
@@ -280,7 +280,7 @@ return valid;
             }
             if (player == 0) {
                 int value1 = ValueStick();
-                System.out.println("\nstickvalue:" + value1);
+                System.out.println("\nstick value:" + value1);
                 System.out.println("turn white");
                 System.out.print("enter site stone : ");
                 int row = scan.nextInt();
@@ -315,7 +315,7 @@ return valid;
             }
             else {
                 int value2 = ValueStick();
-                System.out.println("\nstickvalue:" + value2);
+                System.out.println("\nstick value:" + value2);
                 System.out.println(" turn black");
                 System.out.print("enter site stone: ");
                 int row = scan.nextInt();
@@ -353,8 +353,8 @@ return valid;
         }
         scan.close();
     }
-
-    public void PlayGameWithAI() {
+//تابع اللعب مع الخوارزمية بالتناوب
+    public void PlayGameWithAlgorithm() {
         Scanner scan = new Scanner(System.in);
         Computer c = new Computer();
         int player = 0;
@@ -365,7 +365,7 @@ return valid;
                 break;
             }
             int value = ValueStick();
-            System.out.println("\n stickvalue: " + value);
+            System.out.println("\n stick value: " + value);
             if (player == 0) {
                 System.out.println(" turn white");
                 boolean validMoveMade = false;
@@ -383,8 +383,6 @@ return valid;
                     }
                     if (white != null && state[row].equals("⚪")&& white.in && Move(white, value)) {
                         validMoveMade = true;
-                    } else {
-                        System.out.print("Enter valid site: ");
                     }
                 }
                 player = 1;
@@ -403,8 +401,6 @@ return valid;
                     }
                     Move(black, value);
                     System.out.println("AI moved stone from: " + bestMoveRow);
-                } else {
-                    System.out.println("AI has no valid moves this turn.");
                 }
                 player = 0;
             }
