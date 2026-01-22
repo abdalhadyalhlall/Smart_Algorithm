@@ -46,8 +46,8 @@
 //     حساب القيمة المتوقعة للوحة بناءً على احتمالات نتائج رمي العصي
     private double chancenode(Board b, int d, boolean isMax) {
         double total = 0;
-        double[] probs = {4/16, 6/16, 4/16, 1/16, 1/16};
-        int[] moves = {1, 2, 3, 4, 5};
+        double[] probs = {0.0625, 0.25, 0.375, 0.25, 0.0625};
+        int[] moves = {5, 1, 2, 3, 4};
         for (int i = 0; i < moves.length; i++) {
             double score = moveNode(b, d, isMax, moves[i]);
             total += probs[i] * score;
